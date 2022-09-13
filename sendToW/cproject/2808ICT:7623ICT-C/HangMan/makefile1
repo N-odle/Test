@@ -1,0 +1,12 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = game.h dictio.h
+OBJ = main.o game.o dictio.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hangman: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
+
+
